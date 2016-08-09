@@ -1,0 +1,12 @@
+services:
+    app.command.foo_command:
+        class: ChainCommandBundle\Command\FooCommand
+        arguments: ["main", "@app.command.bar_command", "@logger"]
+        tags:
+            - { name: console.command }
+
+    app.command.bar_command:
+        class: ChainCommandBundle\Command\BarCommand
+        arguments: ["foo:hello", null, "@logger"]
+        tags:
+            - { name: console.command }
