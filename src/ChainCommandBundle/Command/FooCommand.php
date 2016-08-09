@@ -14,7 +14,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class FooCommand extends ChainCommandAbstract
 {
 
-    public function __construct($parentName = ChainCommandAbstract::MAIN, $childName = null, $logger)
+    public function __construct($parentName = ChainCommandAbstract::MAIN, $childName = null, $logger = null)
     {
         parent::__construct($parentName, $childName, $logger);
     }
